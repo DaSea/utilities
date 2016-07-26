@@ -2,7 +2,7 @@ import QtQuick 2.4
 import QtQuick.Controls 1.4
 
 Rectangle {
-    width: 320;
+    width: 500;
     height: 240;
     color: "green";
 
@@ -25,11 +25,28 @@ Rectangle {
         id: image1;
     }
 
+    Loader {
+        id: redColor;
+        width: 80;
+        height: 50;
+        anchors{
+            left: parent.left;
+            leftMargin: 4;
+            bottom: parent.bottom;
+            bottomMargin: 4;
+        }
+        sourceComponent: colorComponent;
+        onLoaded: {
+            item.color = "red";
+        }
+    }
+
     Text {
         id: disText;
         anchors.bottom: parent.bottom;
     }
     Component.onCompleted: {
-        disText.text = text1 + " " + button1 + " " + image1;
+        disText.text = text1 + " " + redColor + " " + image1;
+        // disText.text = image1.objectName;
     }
 }

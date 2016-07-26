@@ -72,4 +72,8 @@ Rectangle {
         target: blueColor.item;
         onColorPicked: coloredText.color = clr;
     }
+
+    Component.onCompleted: {
+        coloredText.text = blueColor;
+    }
 }

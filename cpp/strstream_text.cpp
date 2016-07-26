@@ -24,6 +24,6 @@ int main(int argc, char const *argv[]) {
     long long ll = l;
     std::cout << i << " " << l  <<" " <<ll << std::endl;
 
-    
     return 0;
 }
+
